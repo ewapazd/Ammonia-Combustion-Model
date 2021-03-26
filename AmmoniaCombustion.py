@@ -2,7 +2,6 @@ import cantera as ct
 import numpy as np
 import matplotlib.pyplot as plt
 
-######################3
 class CombustionModel():
     def __init__(self, gas, temperature, pressure, npoints):
         self.temperature = temperature
