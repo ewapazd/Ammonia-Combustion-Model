@@ -50,7 +50,6 @@ class CombustionModel():
 
             for i in range (0,self.npoints):
 
-                #oxidizer = oxidizer + npoints_value
                 self.n_o2 = 0.21*(self.n_air_min + i*self.d_n)
                 self.n_nh3 = 1 #mol
                 self.n_n2 =0.79*(self.n_air_min+i*self.d_n)
@@ -69,7 +68,6 @@ class CombustionModel():
                 self.gas.equilibrate('HP', solver='auto')
 
                 # defining i position inside zero matrix
-                #save results
                 self.z_o2[j][i]= self.gas.X[self.io2]
                 self.z_h2[j][i]= self.gas.X[self.ih2]
                 self.z_n2[j][i]= self.gas.X[self.in2]
@@ -80,7 +78,6 @@ class CombustionModel():
                 self.z_nh3[j][i] = self.gas.X[self.inh3]
 
                 # i position of variables
-                #adiabatic tempeature
                 self.t_adiabatic[j][i] = self.gas.T
 
 
@@ -117,7 +114,7 @@ class CombustionModel():
             tittext = '$p$ = ' + str(self.pressure[j]/10**6) + ' [MPa]'
             plt.title(tittext,fontsize = 10)
 
-        plt.show()
+        #plt.show()
         plt.savefig('species_presssures_air.png',dpi=300)
 
 
@@ -141,7 +138,7 @@ class CombustionModel():
             tittext = '$p$ = ' + str(self.pressure[j]/10**6) + ' [MPa]'
             plt.title(tittext,fontsize = 10)
 
-        plt.show()
+        #plt.show()
         plt.savefig('NOx_presssures_air.png',dpi=300)
         return
 
